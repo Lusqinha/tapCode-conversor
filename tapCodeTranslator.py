@@ -8,16 +8,23 @@ dict = {
 
 
 def main(d):
-    texto = str(input('Insira o texto para ser convertido: \n')).lower()
 
-    x = ''
+    while True:
+        texto = str(input('Insira o texto para ser convertido: \n')).lower()
 
-    for char in texto:
-        if char in d:
-            x += str(d[char])
-            x += ' '
+        x = ''
 
-    print(x + f'\nTexto original: {texto}')
+        for char in texto:
+            if char in d:
+                x += str(d[char])
+                x += ' '
+
+        print(x + f'\nTexto original: {texto}')
+
+        if input('Deseja continuar? [S/N] ').lower() == 'n':
+            break
+        else:
+            continue
 
 
 if __name__ == '__main__':
